@@ -6,3 +6,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('demo.urls')),
 ]
+ # 21:57
