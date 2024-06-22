@@ -1,8 +1,9 @@
 
-```markdown
-# Django with Celery Integration
+
+<h2> Django with Celery Integration</h2>
 
 
+<img src="img/1707743523486.jpg">
 
 ### 1. Clone the Repository
 
@@ -12,6 +13,7 @@
 
 
 # Install virtualenv if you haven't already
+
 ```bash
 pip install virtualenv
 ```
