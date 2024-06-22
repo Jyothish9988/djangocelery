@@ -4,7 +4,6 @@
 
 This project demonstrates integrating Celery with Django for handling asynchronous tasks.
 
-## Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -15,17 +14,23 @@ cd <project_directory>
 
 ### 2. Create a Virtual Environment (Optional but Recommended)
 
-```bash
-# Install virtualenv if you haven't already
-pip install virtualenv
 
+# Install virtualenv if you haven't already
+```bash
+pip install virtualenv
+```
 # Create a virtual environment
+```bash
 virtualenv venv
+```
 
 # Activate the virtual environment (Windows)
+```bash
 venv\Scripts\activate
+```
 
 # Activate the virtual environment (Unix or MacOS)
+```bash
 source venv/bin/activate
 ```
 
@@ -44,14 +49,14 @@ Edit `django_celery/settings.py` to configure Celery and Django settings:
 ```python
 # django_celery/settings.py
 
-# Celery Configuration
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379'  # Redis as the broker
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'  
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'Asia/Kolkata'  # Set Celery timezone
+CELERY_TIMEZONE = 'Asia/Kolkata'  
 
-# Add 'celery' and your app ('demo' in this case) to INSTALLED_APPS
+# Add 'celery' and your app to INSTALLED_APPS
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,13 +85,11 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_celery.settings')
 
 app = Celery('django_celery')
 
-# Read Celery configuration from Django settings file
+
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
-# Auto-discover tasks from all registered Django app configs
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
-# Optionally, set Celery timezone
 app.conf.timezone = 'Asia/Kolkata'
 ```
 
