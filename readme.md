@@ -2,15 +2,11 @@
 ```markdown
 # Django with Celery Integration
 
-This project demonstrates integrating Celery with Django for handling asynchronous tasks.
 
 
 ### 1. Clone the Repository
 
-```bash
-git clone <repository_url>
-cd <project_directory>
-```
+
 
 ### 2. Create a Virtual Environment (Optional but Recommended)
 
